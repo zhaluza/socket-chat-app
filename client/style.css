@@ -7,7 +7,7 @@
 }
 
 body {
-  font: 16px;
+  font-size: 16px;
   font-family: 'Sen', sans-serif;
   display: flex;
   justify-content: center;
@@ -44,50 +44,52 @@ body {
     linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
-.container {
-  height: 50vh;
-  width: 50vw;
+.chat-container {
+  height: 70vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-window {
+  height: 80%;
+  width: 100%;
+  background-color: rgb(250, 250, 250);
+  overflow: scroll;
+}
+
+.output span {
+  color: rgb(58, 58, 255);
+}
+
+.feedback {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgba(56, 56, 56, 0.747);
+}
+
+.message-input {
+  height: 30%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.container ul {
-  background-color: red;
-}
-
-.container form {
-  background-color: rgb(255, 255, 255);
-  padding: 3px;
-  display: flex;
+.message-input input {
   width: 100%;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
 }
 
-.container form input {
-  border: 0;
-  padding: 10px;
-  width: 90%;
-  margin-right: 0.5%;
-}
-
-.container form button {
-  width: 9%;
-  background: rgb(130, 224, 255);
+.message-input button {
+  width: 100%;
+  background-color: rgb(58, 58, 255);
+  color: white;
+  font-size: 1rem;
   border: none;
-  padding: 10px;
-}
-
-.message-window {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.message-window li {
-  padding: 5px 10px;
-}
-
-.message-window li:nth-child(odd) {
-  background: #eee;
+  padding: 1rem;
+  cursor: pointer;
 }
