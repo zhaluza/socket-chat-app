@@ -16,13 +16,22 @@ const io = socket(server);
 io.on('connection', socket => {
   console.log(`Socket connection established: ${socket.id}`);
 
+  // Join room when 'room' event is emitted
+  socket.on('room', data => {
+    socket.join('some room', err => {
+      if (err) console.error(err);
+    });
+    console.log(`User ${socket.id} joined room ${'some room'}`);
+    console.log(io.sockets.adapter.rooms);
+  });
+
   // Handle chat event
   socket.on('chat', data => {
-    io.sockets.emit('chat', data);
+    io.to('some room').emit('chat', data);
   });
 
   // Handle typing event
   socket.on('typing', data => {
-    socket.broadcast.emit('typing', data);
+    io.to('some room').emit('typing', data);
   });
 });

@@ -8,6 +8,9 @@ const btn = document.getElementById('send');
 const output = document.getElementById('output');
 const feedback = document.getElementById('feedback');
 
+// Join room
+socket.emit('room', 'roomba');
+
 // Emit chat events
 
 btn.addEventListener('click', () => {
